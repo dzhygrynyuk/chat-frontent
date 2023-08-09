@@ -1,7 +1,11 @@
+import React from "react";
+
+import { Auth } from "./pages";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Test</h1>
+    <div className="wrapper">
+      <Auth />
     </div>
   );
 }
