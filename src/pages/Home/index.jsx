@@ -10,6 +10,20 @@ const Home = () => (
             avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             text='Hello world!'
             date={new Date(2023, 7, 28)}
+            attachments={[
+                {
+                    filename: "image.jpg",
+                    url: "https://source.unsplash.com/100x100/?random=1&nature,water"
+                },
+                {
+                    filename: "image.jpg",
+                    url: "https://source.unsplash.com/100x100/?random=2&nature,water"
+                },
+                {
+                    filename: "image.jpg",
+                    url: "https://source.unsplash.com/100x100/?random=3&nature,water"
+                }
+            ]}
         />
         <Message 
             avatar='https://mdbcdn.b-cdn.net/img/new/avatars/2.webp'
