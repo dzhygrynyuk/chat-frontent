@@ -1,15 +1,12 @@
 import { withFormik } from 'formik';
 import RegisterForm from "../components/RegisterForm";
-import validate from 'utils/validate';
+import validateForm from 'utils/validateForm';
 
 export default withFormik({
     validate: values => {
         let errors = {};
-        const validation = validate({isAuth: false});
-
-        Object.keys(values).forEach(
-            key => validation[key] && validation[key](errors, values[key])
-        );
+        
+        validateForm({isAuth: false, errors, values});
 
         return errors;
     },
