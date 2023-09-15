@@ -36,6 +36,16 @@ const Home = () => (
             avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             isTyping
         />
+        <Message 
+            avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+            attachments={[
+                {
+                    filename: "image.jpg",
+                    url: "https://images.unsplash.com/photo-1694746027247-4b6f9c6b261d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+                }
+            ]}
+            date={new Date(2023, 8, 12)}
+        />
     </section>
 );
 
