@@ -5,6 +5,7 @@ import { LockOutlined, UserOutlined, MailOutlined, ExclamationCircleOutlined } f
 import { Form, Input } from "antd";
 
 import { Button, Block } from "components";
+import { validateField } from 'utils/helpers';
 
 const RegisterForm = props => {
     const success = false;
@@ -27,13 +28,21 @@ const RegisterForm = props => {
             <Block>
                 {!success ? (
                     <Form className="login-form" onSubmit={handleSubmit}>
-                        <Form.Item>
+                        <Form.Item
+                            validateStatus={validateField('username', touched, errors)}
+                            help={ !touched.username ? '' : errors.username }
+                            hasFeedback
+                        >
                             <Input
+                                id="username"
                                 prefix={
                                     <UserOutlined className="site-form-item-icon" style={{ color: '#adadad' }} />
                                 }
                                 size="large"
                                 placeholder="Username"
+                                value={values.username}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Form.Item>
                         <Form.Item
@@ -56,9 +65,7 @@ const RegisterForm = props => {
                             />
                         </Form.Item>
                         <Form.Item
-                            validateStatus={
-                                !touched.password ? '' : errors.password ? 'error' : 'success'
-                            }
+                            validateStatus={validateField('password', touched, errors)}
                             help={ !touched.password ? '' : errors.password }
                             hasFeedback
                         >

@@ -5,6 +5,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Form, Input } from "antd";
 
 import { Button, Block } from "components";
+import { validateField } from 'utils/helpers';
 
 const LoginForm = props => {
     const {
@@ -24,19 +25,25 @@ const LoginForm = props => {
             </div>
             <Block>
                 <Form className="login-form">
-                    <Form.Item validateStatus="success" hasFeedback>
+                    <Form.Item 
+                        validateStatus={validateField('username', touched, errors)}
+                        help={ !touched.username ? '' : errors.username }
+                        hasFeedback
+                    >
                         <Input
+                            id="username"
                             prefix={
                                 <UserOutlined className="site-form-item-icon" style={{ color: '#adadad' }} />
                             }
                             size="large"
                             placeholder="Username"
+                            value={values.username}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
                         />
                     </Form.Item>
                     <Form.Item
-                        validateStatus={
-                            !touched.password ? '' : errors.password ? 'error' : 'success'
-                        }
+                        validateStatus={validateField('password', touched, errors)}
                         help={ !touched.password ? '' : errors.password }
                         hasFeedback
                     >
@@ -54,7 +61,7 @@ const LoginForm = props => {
                         />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" size="large">Login</Button>
+                        <Button onClick={handleSubmit} type="primary" size="large">Login</Button>
                     </Form.Item>
                     <Link className="auth__register-link" to="/register">Registration</Link>
                 </Form>

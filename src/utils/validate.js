@@ -1,4 +1,4 @@
-const validateForm = ({ isAuth, errors, values }) => {
+export default ({ isAuth, errors, values }) => {
     const rules = {
         email: value => {
             if(!value){
@@ -17,10 +17,17 @@ const validateForm = ({ isAuth, errors, values }) => {
             ){
                 errors.password = isAuth ? 'Incorrect password' : 'Must contain at least one number and one uppercase and lowercase letter, and one special character, and at least 8 or more characters'; 
             }
-        }
+        },
+        username: value => {
+            if(!value){
+                errors.username = 'Required';
+            }else if(
+                !/^[a-z\d_]{4,16}$/.test(value)
+            ){
+                errors.username = 'Not correct username'; 
+            }
+        },
     };
 
     Object.keys(values).forEach(key => rules[key] && rules[key](values[key]));
-};
-
-export default validateForm;
+};;
