@@ -8,7 +8,7 @@ import noReadedSvg from "assets/img/noreaded.svg";
 
 import './Message.scss';
 
-const Message = ({ avatar, user, text, date, isMe, isReaded, attachments }) => (
+const Message = ({ avatar, user, text, date, isMe, isReaded, isTyping, attachments }) => (
     <div className={classNames("message", { "message--isme": isMe })}>
         <div className="message__content">
             {isMe && isReaded ? (
@@ -29,7 +29,14 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, attachments }) => (
             </div>
             <div className="message__info">
                 <div className="message__bubble">
-                    <p className="message__text">{text}</p>
+                    {text && <p className="message__text">{text}</p>}
+                    {isTyping && (
+                        <div className="message__typing">
+                            <span />
+                            <span />
+                            <span />
+                        </div>
+                    )}
                 </div>
                 <div className="message__attachments">
                     {attachments && attachments.map(item => (
@@ -38,7 +45,7 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, attachments }) => (
                         </div>
                     ))}
                 </div>
-                <span className="message__date">{formatDistanceToNow(date)}</span>
+                {date && <span className="message__date">{formatDistanceToNow(date)}</span>}
             </div>
         </div>
     </div>    

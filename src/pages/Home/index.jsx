@@ -13,15 +13,15 @@ const Home = () => (
             attachments={[
                 {
                     filename: "image.jpg",
-                    url: "https://source.unsplash.com/100x100/?random=1&nature,water"
+                    url: "https://images.unsplash.com/photo-1694376015496-140430f9bf88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=60"
                 },
                 {
                     filename: "image.jpg",
-                    url: "https://source.unsplash.com/100x100/?random=2&nature,water"
+                    url: "https://images.unsplash.com/photo-1691637111378-c3080d80df4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM0fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=100&q=60"
                 },
                 {
                     filename: "image.jpg",
-                    url: "https://source.unsplash.com/100x100/?random=3&nature,water"
+                    url: "https://images.unsplash.com/photo-1635418921255-6ee53b68464c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8Q0R3dXdYSkFiRXd8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=60"
                 }
             ]}
         />
@@ -31,6 +31,10 @@ const Home = () => (
             date={new Date(2023, 7, 29)}
             isMe={true}
             isReaded={true}
+        />
+        <Message 
+            avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+            isTyping
         />
     </section>
 );
