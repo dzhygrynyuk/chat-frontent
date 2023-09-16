@@ -1,12 +1,21 @@
 import React from "react";
 
-import { Message } from "components";
+import { Message, DialogItem } from "components";
 
 import './Home.scss';
 
 const Home = () => (
     <section className="home">
-        <Message 
+        <div className="dialogs">
+            <DialogItem
+                user={{
+                    fullname: "Федор Достоевский",
+                    isOnline: true
+                }}
+                unreaded={4}
+            />
+        </div>  
+        {/* <Message 
             avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             text='Hello world!'
             date={new Date(2023, 7, 28)}
@@ -45,7 +54,7 @@ const Home = () => (
                 }
             ]}
             date={new Date(2023, 8, 12)}
-        />
+        /> */}
     </section>
 );
 
