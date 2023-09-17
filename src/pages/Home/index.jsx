@@ -1,20 +1,33 @@
 import React from "react";
 
-import { Message, DialogItem } from "components";
+import { Dialogs } from "components";
 
 import './Home.scss';
 
 const Home = () => (
     <section className="home">
-        <div className="dialogs">
-            <DialogItem
-                user={{
-                    fullname: "Федор Достоевский",
-                    isOnline: true
-                }}
-                unreaded={4}
-            />
-        </div>  
+        <Dialogs items={[
+            {
+                _id: 1,
+                text: "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.",
+                created_at: new Date(2023, 8, 14),
+                user: {
+                    _id: 101,
+                    fullname: 'Steve Jobs',
+                    avatar: 'https://i.pinimg.com/236x/e0/7d/06/e07d0688389b79d19a014fd12d9bea28--flat-design-illustration-illustration-styles.jpg',
+                },
+            },
+            {
+                _id: 2,
+                text: "My goal wasn't to make a ton of money. It was to build good computers.",
+                created_at: new Date(2023, 8, 16),
+                user: {
+                    _id: 102,
+                    fullname: 'Steve Wozniak',
+                    avatar: 'https://www.celebrityspeakers.com.au/content/uploads/2021/02/Wozniack-Steve-web.png',
+                },
+            }
+        ]} />
         {/* <Message 
             avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             text='Hello world!'
