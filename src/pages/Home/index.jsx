@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Dialogs } from "components";
+import { Dialogs, Message } from "components";
 
 import './Home.scss';
 
@@ -28,6 +28,11 @@ const Home = () => (
                 },
             }
         ]} />
+        <Message 
+            avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+            date={new Date(2023, 7, 28)}
+            audio='https://ringtonlife.com/uploads/files/2022-10/ringtonlife.com_karna-poltergejst.mp3'
+        />
         {/* <Message 
             avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             text='Hello world!'
