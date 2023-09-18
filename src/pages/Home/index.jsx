@@ -12,7 +12,7 @@ const Home = () => (
                 text: "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.",
                 created_at: new Date(2023, 8, 14),
                 user: {
-                    _id: 101,
+                    _id: '76fee5e6598ccd5c',
                     fullname: 'Steve Jobs',
                     avatar: 'https://i.pinimg.com/236x/e0/7d/06/e07d0688389b79d19a014fd12d9bea28--flat-design-illustration-illustration-styles.jpg',
                 },
@@ -22,7 +22,7 @@ const Home = () => (
                 text: "My goal wasn't to make a ton of money. It was to build good computers.",
                 created_at: new Date(2023, 8, 16),
                 user: {
-                    _id: 102,
+                    _id: '2b10de31708e6ab7',
                     fullname: 'Steve Wozniak',
                     avatar: 'https://www.celebrityspeakers.com.au/content/uploads/2021/02/Wozniack-Steve-web.png',
                 },

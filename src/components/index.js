@@ -5,3 +5,4 @@ export {default as DialogItem} from './DialogItem/index.js';
 export {default as Time} from './Time/index.js';
 export {default as IconReaded} from './IconReaded/index.js';
 export {default as Dialogs} from './Dialogs/index.js';
+export {default as Avatar} from './Avatar/index.js';
