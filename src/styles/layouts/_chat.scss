@@ -13,7 +13,7 @@
         &-header {
             display: flex;
             justify-content: space-between;
-            padding: 21px;
+            padding: 0 21px;
             height: 58px;
             border-bottom: 1px solid #f7f7f7;
             margin-bottom: 20px;
@@ -41,7 +41,7 @@
         }
   
         &-dialogs {
-            height: calc(100% - 136px);
+            height: calc(100vh - 131px);
   
             .dialogs {
                 height: 100%;
@@ -99,7 +99,7 @@
             padding: 20px;
             padding-bottom: 0;
             overflow: auto;
-            height: calc(100% - 138px);
+            height: calc(100vh - 155px);
         }
     }
 }

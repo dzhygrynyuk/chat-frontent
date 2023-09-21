@@ -7,3 +7,4 @@ export {default as IconReaded} from './IconReaded/index.js';
 export {default as Dialogs} from './Dialogs/index.js';
 export {default as Avatar} from './Avatar/index.js';
 export {default as Status} from './Status/index.js';
+export {default as ChatInput} from './ChatInput/index.js';

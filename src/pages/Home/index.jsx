@@ -2,7 +2,7 @@ import React from "react";
 
 import { Input, Button } from "antd";
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dialogs, Message, Status } from "components";
+import { Dialogs, Message, Status, ChatInput } from "components";
 
 import './Home.scss';
 
@@ -35,7 +35,7 @@ const Home = () => (
                             },
                         },
                         {
-                            _id: 3,
+                            _id: 2,
                             text: "Let your joy be in your journey - not in some distant goal. ",
                             created_at: new Date(2023, 8, 11),
                             user: {
@@ -45,7 +45,7 @@ const Home = () => (
                             },
                         },
                         {
-                            _id: 2,
+                            _id: 3,
                             text: "My goal wasn't to make a ton of money. It was to build good computers.",
                             created_at: new Date(2023, 8, 12),
                             user: {
@@ -55,7 +55,7 @@ const Home = () => (
                             },
                         },
                         {
-                            _id: 3,
+                            _id: 4,
                             text: "Patience is a key element of success.",
                             created_at: new Date(2023, 8, 13),
                             user: {
@@ -65,7 +65,7 @@ const Home = () => (
                             },
                         },
                         {
-                            _id: 3,
+                            _id: 5,
                             text: "Intelligence is the ability to avoid doing work, yet getting the work done.",
                             created_at: new Date(2023, 8, 14),
                             user: {
@@ -75,7 +75,7 @@ const Home = () => (
                             },
                         },
                         {
-                            _id: 3,
+                            _id: 6,
                             text: "Figuring out what the next big trend is tells us what we should focus on.",
                             created_at: new Date(2023, 8, 15),
                             user: {
@@ -83,7 +83,52 @@ const Home = () => (
                                 fullname: 'Mark Zuckerberg',
                                 avatar: 'https://static.independent.co.uk/2022/08/22/10/mark%20zuckerberg%20metaverse%20avatar.png',
                             },
-                        }
+                        },
+                        {
+                            _id: 7,
+                            text: "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.",
+                            created_at: new Date(2023, 8, 10),
+                            user: {
+                                _id: '76fee5e6598ccd5c',
+                                fullname: 'Pichai Sundararajan',
+                            },
+                        },
+                        {
+                            _id: 8,
+                            text: "Let your joy be in your journey - not in some distant goal. ",
+                            created_at: new Date(2023, 8, 11),
+                            user: {
+                                _id: '5b9e1031708e6ab7',
+                                fullname: 'Bjarne Stroustrup',
+                            },
+                        },
+                        {
+                            _id: 9,
+                            text: "My goal wasn't to make a ton of money. It was to build good computers.",
+                            created_at: new Date(2023, 8, 12),
+                            user: {
+                                _id: '1b21fd31708e6ab7',
+                                fullname: 'Alan Turing',
+                            },
+                        },
+                        {
+                            _id: 10,
+                            text: "Patience is a key element of success.",
+                            created_at: new Date(2023, 8, 13),
+                            user: {
+                                _id: '5bc174e31708e6ab7',
+                                fullname: 'Dennis Ritchie',
+                            },
+                        },
+                        {
+                            _id: 11,
+                            text: "Intelligence is the ability to avoid doing work, yet getting the work done.",
+                            created_at: new Date(2023, 8, 14),
+                            user: {
+                                _id: '5b111e31708e6ab7',
+                                fullname: 'Larry Page',
+                            },
+                        },
                     ]} />
                 </div>
             </div>
@@ -140,9 +185,41 @@ const Home = () => (
                         ]}
                         date={new Date(2023, 8, 12)}
                     />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text='Let your joy be in your journey!'
+                        date={new Date(2023, 7, 28)}
+                    />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text="t's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them."
+                        date={new Date(2023, 7, 28)}
+                    />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text="My goal wasn't to make a ton of money. It was to build good computers"
+                        date={new Date(2023, 7, 28)}
+                    />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text='Let your joy be in your journey!'
+                        date={new Date(2023, 7, 28)}
+                    />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text="Intelligence is the ability to avoid doing work, yet getting the work done."
+                        date={new Date(2023, 7, 28)}
+                    />
+                    <Message 
+                        avatar='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+                        text="Patience is a key element of success."
+                        date={new Date(2023, 7, 28)}
+                    />
                 </div>
 
-                <div className="chat__dialog-input"></div>
+                <div className="chat__dialog-input">
+                    <ChatInput />
+                </div>
             </div>
         </div>
 
