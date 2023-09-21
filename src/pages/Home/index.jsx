@@ -2,7 +2,7 @@ import React from "react";
 
 import { Input, Button } from "antd";
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dialogs, Message } from "components";
+import { Dialogs, Message, Status } from "components";
 
 import './Home.scss';
 
@@ -93,7 +93,7 @@ const Home = () => (
                     <div className="chat__dialog-header-center">
                         <b className="chat__dialog-header-username">Steve Wozniak</b>
                         <div className="chat__dialog-header-status">
-                            
+                            <Status online />
                         </div>
                     </div>
                     <EllipsisOutlined />
