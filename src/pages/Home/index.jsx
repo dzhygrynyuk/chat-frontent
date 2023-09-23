@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Input, Button } from "antd";
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dialogs, Message, Status, ChatInput } from "components";
+import { Message, Status, ChatInput } from "components";
+import { Dialogs } from "containers";
 
 import './Home.scss';
 
@@ -17,13 +17,9 @@ const Home = () => (
                     </div>
                     <FormOutlined />
                 </div>
-                
-                <div className="chat__sidebar-search">
-                    <Input.Search placeholder="input search text" />
-                </div>
 
                 <div className="chat__sidebar-dialogs">
-                    <Dialogs items={[
+                    <Dialogs userId={0} items={[
                         {
                             _id: 1,
                             text: "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.",
