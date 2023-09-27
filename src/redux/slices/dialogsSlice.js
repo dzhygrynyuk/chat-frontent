@@ -5,8 +5,6 @@ export const fetchDialogs = createAsyncThunk(
     'dialogs/fetchDialogs',
     async () => {
         const { data } = await dialogsApi.getAll();
-        console.log('fetchDialogs');
-        console.log(data);
         return data
     }
 )

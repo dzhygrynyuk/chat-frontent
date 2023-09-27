@@ -2,14 +2,15 @@ import React from "react";
 import classNames from "classnames";
 import format from "date-fns/format";
 import isToday from "date-fns/isToday";
+import parseISO from "date-fns/parseISO";
 
 import { IconReaded, Avatar } from '../';
 
 const getMessageTime = created_at => {
     if(isToday(created_at)){
-        return format(created_at, 'HH:mm');
+        return format(new Date(created_at), 'HH:mm');
     }else{
-        return format(created_at, 'dd.MM.yyyy');
+        return format(new Date(created_at), 'dd.MM.yyyy');
     }
 }
 
