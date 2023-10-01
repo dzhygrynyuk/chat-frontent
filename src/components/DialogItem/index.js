@@ -2,7 +2,6 @@ import React from "react";
 import classNames from "classnames";
 import format from "date-fns/format";
 import isToday from "date-fns/isToday";
-import parseISO from "date-fns/parseISO";
 
 import { IconReaded, Avatar } from '../';
 
@@ -14,10 +13,10 @@ const getMessageTime = created_at => {
     }
 }
 
-const DialogItem = ({ text, created_at, user, unreaded, isMe }) => (
+const DialogItem = ({ _id, text, created_at, user, unreaded, isMe, onSelect }) => (
     <div className={classNames("dialogs__item", {
         "dialogs__item--online": user.isOnline
-    })}>
+    })} onClick={() => onSelect(_id)}>
         <div className="dialogs__item-avatar">
             <Avatar user={user} />
         </div>

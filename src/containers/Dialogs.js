@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDialogs } from "redux/slices/dialogsSlice";
+import { fetchDialogs, setCurrentDialog } from "redux/slices/dialogsSlice";
 
 import { Dialogs as BaseDialogs } from "components";
 
@@ -28,12 +28,17 @@ const Dialogs = ({ userId }) => {
         setValue(value);
     };
 
+    const onClicSelectDialog = (id) => {
+        dispatch(setCurrentDialog(id));
+    }
+
     return (
         <BaseDialogs
             userId={userId}
             items={filtred}
             onSearch={onChangeInput}
             inputValue={inputValue}
+            onSelectDialog={onClicSelectDialog}
         />
     );
 }
