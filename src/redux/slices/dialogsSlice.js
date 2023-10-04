@@ -7,7 +7,7 @@ export const fetchDialogs = createAsyncThunk(
         const { data } = await dialogsApi.getAll();
         return data
     }
-)
+);
 
 const initialState = {
     items: [],
