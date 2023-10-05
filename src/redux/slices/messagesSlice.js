@@ -21,6 +21,11 @@ const messagesSlice = createSlice({
             state.items = action.payload;
         },
     },
+    extraReducers: {
+        [fetchMessages.fulfilled]: (state, action) => {
+            state.items = action.payload;
+        }
+    },
 });
 
 export const { setItems } = messagesSlice.actions;

@@ -1,8 +1,8 @@
 import React from "react";
 
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Messages, Status, ChatInput } from "components";
-import { Dialogs } from "containers";
+import { Status, ChatInput } from "components";
+import { Dialogs, Messages } from "containers";
 
 import './Home.scss';
 
@@ -35,7 +35,7 @@ const Home = () => (
                 </div>
 
                 <div className="chat__dialog-messages">
-                    <Messages items={[1,2,3]}/>
+                    <Messages/>
                 </div>
 
                 <div className="chat__dialog-input">

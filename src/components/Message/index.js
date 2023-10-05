@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from "classnames";
 
 import { convertCurrentTime } from "utils/helpers";
-import { Time, IconReaded } from '../';
+import { Time, IconReaded, Avatar } from '../';
 
 import waveSvg from "assets/img/wave.svg";
 import playSvg from "assets/img/play.svg";
@@ -81,7 +81,7 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, isTyping, attachmen
             <div className="message__content">
                 <IconReaded isMe={isMe} isReaded={isReaded} />
                 <div className="message__avatar">
-                    <img src={avatar} alt={`Avatar ${user.fullname}`} />
+                    <Avatar user={user} />
                 </div>
                 <div className="message__info">
                     {(text || audio || isTyping) && (

@@ -19,9 +19,6 @@ const dialogsSlice = createSlice({
     name: 'dialogs',
     initialState,
     reducers: {
-        setItems: (state, action) => {
-            state.items = action.payload;
-        },
         setCurrentDialog: (state, action) => {
             state.currentDialog = action.payload;
         }
@@ -33,6 +30,6 @@ const dialogsSlice = createSlice({
     },
 });
 
-export const { setItems, setCurrentDialog } = dialogsSlice.actions;
+export const { setCurrentDialog } = dialogsSlice.actions;
 
 export default dialogsSlice.reducer;
