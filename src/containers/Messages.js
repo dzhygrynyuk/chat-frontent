@@ -8,7 +8,8 @@ import { Messages as BaseMessages } from "components";
 const Messages = () => {
     const dispatch = useDispatch();
     const { currentDialog } = useSelector( state => state.dialogs);
-    const { items } = useSelector( state => state.messages);
+    const { items, isLoading } = useSelector( state => state.messages);
+    const messagesRef = React.useRef(null);
     
     React.useEffect(() => {
         if(currentDialog){
@@ -16,8 +17,12 @@ const Messages = () => {
         }
     }, [currentDialog]);
 
+    React.useEffect(() => {
+        messagesRef.current.scrollTo(0, 999999);
+    }, [items]);
+
     return (
-        <BaseMessages items={items} />
+        <BaseMessages blockRef={messagesRef} items={items} isLoading={isLoading} />
     );
 }
 

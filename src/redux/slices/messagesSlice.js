@@ -11,6 +11,7 @@ export const fetchMessages = createAsyncThunk(
 
 const initialState = {
     items: [],
+    isLoading: false,
 };
 
 const messagesSlice = createSlice({
@@ -22,8 +23,13 @@ const messagesSlice = createSlice({
         },
     },
     extraReducers: {
+        [fetchMessages.pending]: (state) => {
+            state.isLoading = true;
+            state.items = [];
+        },
         [fetchMessages.fulfilled]: (state, action) => {
             state.items = action.payload;
+            state.isLoading = false;
         }
     },
 });
