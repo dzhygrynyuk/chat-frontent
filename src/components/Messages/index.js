@@ -15,12 +15,14 @@ const Messages = ({ blockRef, items, isLoading }) => {
         >
             {isLoading ? (
                 <Spin size="large" tip="Loading messages..." />
-            ) : (
+            ) : items && !isLoading ? (
                 items.length > 0 ? (
                     items.map(item => <Message key={item._id} {...item} />)
                 ) : (
-                    <Empty description="Open dialogue" />
+                    <Empty description="Dialogue is empty" />
                 )
+            ) : (
+                <Empty description="Open dialogue" />
             )}
         </div>
     );

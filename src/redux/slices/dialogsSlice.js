@@ -11,7 +11,7 @@ export const fetchDialogs = createAsyncThunk(
 
 const initialState = {
     items: [],
-    currentDialog: null,
+    currentDialogId: null,
 };
 
 
@@ -20,7 +20,7 @@ const dialogsSlice = createSlice({
     initialState,
     reducers: {
         setCurrentDialog: (state, action) => {
-            state.currentDialog = action.payload;
+            state.currentDialogId = action.payload;
         }
     },
     extraReducers: {

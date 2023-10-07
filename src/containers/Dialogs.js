@@ -7,7 +7,7 @@ import { Dialogs as BaseDialogs } from "components";
 
 const Dialogs = ({ userId }) => {
     const dispatch = useDispatch();
-    const { items } = useSelector( state => state.dialogs);
+    const { items, currentDialogId } = useSelector( state => state.dialogs);
     const [inputValue, setValue] = React.useState("");
     const [filtred, setFiltredItems] = React.useState(Array.from(items));
     
@@ -39,6 +39,7 @@ const Dialogs = ({ userId }) => {
             onSearch={onChangeInput}
             inputValue={inputValue}
             onSelectDialog={onClicSelectDialog}
+            currentDialogId={currentDialogId}
         />
     );
 }

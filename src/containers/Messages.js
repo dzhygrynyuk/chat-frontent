@@ -7,15 +7,15 @@ import { Messages as BaseMessages } from "components";
 
 const Messages = () => {
     const dispatch = useDispatch();
-    const { currentDialog } = useSelector( state => state.dialogs);
+    const { currentDialogId } = useSelector( state => state.dialogs);
     const { items, isLoading } = useSelector( state => state.messages);
     const messagesRef = React.useRef(null);
     
     React.useEffect(() => {
-        if(currentDialog){
-            dispatch(fetchMessages(currentDialog));
+        if(currentDialogId){
+            dispatch(fetchMessages(currentDialogId));
         }
-    }, [currentDialog]);
+    }, [currentDialogId]);
 
     React.useEffect(() => {
         messagesRef.current.scrollTo(0, 999999);
