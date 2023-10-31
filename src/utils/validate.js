@@ -12,10 +12,8 @@ export default ({ isAuth, errors, values }) => {
         password: value => {
             if(!value){
                 errors.password = 'Required';
-            }else if(
-                !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(value)
-            ){
-                errors.password = isAuth ? 'Incorrect password' : 'Must contain at least one number and one uppercase and lowercase letter, and one special character, and at least 8 or more characters'; 
+            }else if( !isAuth && !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(value) ){
+                errors.password = 'Must contain at least one number and one uppercase and lowercase letter, and one special character, and at least 8 or more characters'; 
             }
         },
         username: value => {
