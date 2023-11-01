@@ -1,9 +1,9 @@
 import { withFormik } from 'formik';
 import LoginForm from "../components/LoginForm";
 import validateForm from 'utils/validate';
-import axios from 'core/axios';
 
-import { openNotification } from 'utils/helpers';
+import { store } from 'redux/store';
+import { fetchUserLogin } from "redux/slices/usersSlice";
 
 export default withFormik({
     enableReinitialize: true,
@@ -18,18 +18,9 @@ export default withFormik({
     },
   
     handleSubmit: (values, { setSubmitting }) => {
-        return axios.post('/user/login', values)
-                    .then(({ data }) => {
-                        console.log(data);
-                    })
-                    .catch( error => {
-                        const { message } = error.response.data;
-                        openNotification({
-                            title: "Authorization error",
-                            text: message, 
-                            type: 'error'
-                        });
-                    });
+        store.dispatch(fetchUserLogin(values)).then(() => {
+            setSubmitting(false);
+        });
     },
     displayName: 'LoginForm',
 })(LoginForm);
