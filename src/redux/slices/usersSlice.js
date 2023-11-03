@@ -11,6 +11,14 @@ export const fetchUserLogin = createAsyncThunk(
     }
 );
 
+export const fetchUserData = createAsyncThunk(
+    'messages/fetchUserData',
+    async () => {
+        const { data } = await usersApi.getMe();
+        return data
+    }
+);
+
 const initialState = {
     data: null,
     isAuth: false,
@@ -21,9 +29,19 @@ const usersSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: {
-        [fetchUserLogin.fulfilled]: (state, action) => {
+        [fetchUserData.fulfilled]: (state, action) => {
             state.data = action.payload;
+        },
+        [fetchUserLogin.fulfilled]: (state, action) => {
+            //state.data = action.payload;
+            const { token } = action.payload;
             state.isAuth = true;
+
+            window.axios.defaults.headers.common['token'] = token;
+            window.localStorage['token'] = token;
+            //usersSlice.caseReducers.fetchUserData();
+            //usersSlice.actions.fetchUserData();
+
             openNotification({
                 title: "Successful",
                 text: "Authorization is successful!", 
@@ -36,7 +54,7 @@ const usersSlice = createSlice({
                 text: "User not found!", 
                 type: 'error'
             });
-        }
+        },
     },
 });
 
