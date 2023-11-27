@@ -33,14 +33,12 @@ const usersSlice = createSlice({
             state.data = action.payload;
         },
         [fetchUserLogin.fulfilled]: (state, action) => {
-            //state.data = action.payload;
-            const { token } = action.payload;
+            state.data = action.payload.userData;
             state.isAuth = true;
+            const token = action.payload.token;
 
             window.axios.defaults.headers.common['token'] = token;
             window.localStorage['token'] = token;
-            //usersSlice.caseReducers.fetchUserData();
-            //usersSlice.actions.fetchUserData();
 
             openNotification({
                 title: "Successful",
